@@ -41,6 +41,8 @@ jobs:
       - name: Instalar CmdStan
         run: |
           library(cmdstanr)
+          # Cria o diretório vazio para o install_cmdstan não reclamar
+          dir.create("~/.cmdstan", showWarnings = FALSE, recursive = TRUE)
           install_cmdstan(dir = "~/.cmdstan")
         shell: Rscript {0}
 
