@@ -1,5 +1,7 @@
 dados_modelo <- readRDS("dados_modelo.rds")
 
+library(brms)
+
 form_mt <- bf(MT_std ~ 0 + ETAPA + ETAPA:EP_fct + NSE_std + (1 | NM_REGIONAL / CD_ESCOLA))
 
 modelo_mt <- brm(
