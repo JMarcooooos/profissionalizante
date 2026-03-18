@@ -14,7 +14,7 @@ modelo_mt <- brm(
   ),
   iter = 2000, warmup = 1000,
   backend = 'cmdstanr',
-  cores = n_cores, chains = 4, threads = threading(1),
+  cores = 4, chains = 4, threads = threading(1),
   stan_model_args = list(stanc_options = list("O1"))
 )
 saveRDS(modelo_mt, "modelo_mt_ajustado.rds")
