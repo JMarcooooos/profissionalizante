@@ -15,7 +15,7 @@ modelo_mt <- brm(
     prior(exponential(1), class = "sd")),
   iter = 2000, warmup = 1000,
   backend = 'cmdstanr',
-  cores = 4, chains = 4, threads = threading(1),
+  cores = 4, chains = 2, threads = threading(1),
   stan_model_args = list(stanc_options = list("O1"))
 )
 
