@@ -32,6 +32,16 @@ jobs:
           install.packages("cmdstanr", repos = c("https://mc-stan.org/r-packages/", getOption("repos")))
         shell: Rscript {0}
 
+      - name: 🕵️ Verificar Hardware da Máquina Virtual
+        run: |
+          echo "=== INFORMAÇÕES DO PROCESSADOR (CPU) ==="
+          lscpu
+          echo "=== INFORMAÇÕES DA MEMÓRIA (RAM) ==="
+          free -h
+          echo "=== SISTEMA OPERACIONAL ==="
+          uname -a
+          lsb_release -a
+
       - name: Cache do CmdStan
         uses: actions/cache@v4
         with:
